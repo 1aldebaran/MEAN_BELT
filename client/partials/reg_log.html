@@ -1,0 +1,77 @@
+<div class="container-fluid center-block row">
+  <div class="center-block text-center" id="errors">
+    <ul>
+      <small><li ng-repeat="error in UC.errors">{{error}}</li></small>
+    </ul>
+  </div>
+  <div class="center-block text-center" id="messages">
+    <ul>
+      <i><b><li ng-repeat="message in UC.messages">{{message}}</li></b></i>
+    </ul>
+  </div>
+  <div class="col-md-7">
+    <h1>Register</h1>
+    <div class="" style="width:auto;">
+      <form ng-submit="UC.create(UC.newUser)">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label col-form-label-sm"><small>First Name</small></label>
+          <div class="col-md-6 nopadding">
+            <input type="text" class="form-control input-sm"  ng-model="UC.newUser.first_name">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label col-form-label-sm"><small>Last Name</small></label>
+          <div class="col-md-6 nopadding">
+            <input type="text" class="form-control input-sm"  ng-model="UC.newUser.last_name">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label col-form-label-sm"><small>Email</small></label>
+          <div class="col-md-6 nopadding">
+            <input type="text" class="form-control input-sm"  ng-model="UC.newUser.email">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label col-form-label-sm"><small>Password</small></label>
+          <div class="col-md-6 nopadding password">
+            <input type= "password" class="form-control input-sm passwordfield" name='rpassword' onfocus="showGlyph('rpassword')" onfocusout="hideGlyph('rpassword')" ng-model="UC.newUser.password">
+            <span class=" glyphicon glyphicon-eye-open" name='rpassword' onmousedown="showPassword('rpassword')" onmouseup="hidePassword('rpassword')" onmouseout="hidePassword('rpassword')"></span>
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label "><small>Confirm password</small></label>
+          <div class="col-md-6 nopadding">
+            <input type="password" class="form-control input-sm passwordfield" name='rpass' onfocus="showGlyph('rpass')" onfocusout="hideGlyph('rpass')" ng-model="UC.newUser.pass">
+            <span class=" glyphicon glyphicon-eye-open" name='rpass' onmousedown="showPassword('rpass')" onmouseup="hidePassword('rpass')" onmouseout="hidePassword('rpass')"></span>
+          </div>
+          <div class="col-md-3 nopadding">
+            <input type="submit" class="btn btn-sm" value="Create User" style="width:150px margin-left:200px">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  <div class="col-md-5">
+    <div class="" style="width:auto;">
+      <h1>Login</h1>
+      <form ng-submit="UC.login(UC.currentUser)">
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label"><small>Email</small></label>
+          <div class="col-md-6 nopadding">
+            <input type="text" class="form-control input-sm" ng-model="UC.currentUser.email">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label class="col-md-3 col-form-label"><small>Password</small></label>
+          <div class="col-md-6 nopadding password">
+            <input type="password" class="form-control input-sm passwordfield" name='lpassword' onfocus="showGlyph('lpassword')" onfocusout="hideGlyph('lpassword')" ng-model="UC.currentUser.password">
+            <span class="glyphicon glyphicon-eye-open" name='lpassword' onmousedown="showPassword('lpassword')" onmouseup="hidePassword('lpassword')" onmouseout="hidePassword('lpassword')"></span>
+          </div>
+          <div class="col-md-3 nopadding">
+            <input type="submit" class="btn btn-sm" value="Login" style="width:150px margin-left:25px">
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

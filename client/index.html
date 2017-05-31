@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en" ng-app = "app">
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <link rel="stylesheet" type="text/css" href="../static/css/style.css">
+    <script src="angular/angular.js" charset="utf-8"></script>
+    <script src="../static/js/script.js" charset="utf-8"></script>
+    <script src="angular-route/angular-route.js" charset="utf-8"></script>
+    <script src="angular-cookies/angular-cookies.js" charset="utf-8"></script>
+    <script src="angular-momentjs/angular-momentjs.js" charset="utf-8"></script>
+    <script src="angular/config.js" charset="utf-8"></script>
+    <script src="angular/factories/user_factory.js" charset="utf-8"></script>
+    <script src="angular/factories/poll_factory.js" charset="utf-8"></script>
+    <script src="angular/controllers/nav_controller.js" charset="utf-8"></script>
+    <script src="angular/controllers/users_controller.js" charset="utf-8"></script>
+    <script src="angular/controllers/polls_controller.js" charset="utf-8"></script>
+    <meta charset="utf-8">
+    <title>Surveys</title>
+  </head>
+  <body>
+    <div class="container-fluid">
+      <nav class="navbar navbar-inverse bg-primary" ng-controller="NavController">
+        <a class="navbar-brand" href="#">
+          <small style="font-family: 'Montserrat Subrayada', sans-serif; vertical-align:middle">Survey</small>
+        </a>
+        <div ng-if="state" class=" center-block" style="font-size:10px; background-color:transparent">
+          <a class="nav-item nav-link btn btn-default" style="background-color:transparent; color:aqua; margin-top:5px; border:none;" href="#!/dashboard">Dashboard</a>
+
+          <a class="nav-item nav-link btn btn-default" style="background-color:transparent; color:aqua; margin-top:5px; border:none;" href="#!/profile/{{user._id}}">Profile</a>
+
+          <a class="nav-item nav-link btn btn-default" style="background-color:transparent; color:aqua; margin-top:5px; border:none;" href="#!/create">Create Poll</a>
+
+          <a class="nav-item nav-link btn btn-default" style="background-color:transparent; color:aqua; margin-top:5px; border:none;" ng-click="logout()" href="#">Logout</a>
+        </div>
+      </nav>
+      <div id="wrapper">
+        <div class="center-block text-center" id="messages">
+          <ul>
+            <i><b><li ng-repeat="message in TC.messages">{{message}}</li></b></i>
+          </ul>
+        </div>
+        <div  class="center-block" ng-view>
+
+        </div>
+      </div>
+    </div>
+    <footer class="container-fluid">
+      <div id="wrapper" class="navbar" style="background-color:silver; padding:10px 30px; width:inherit;">
+        <p class="muted credit center-block"><a href="http://linkedin.com/in/eaogbeide"><i class="glyphicon glyphicon-user"></i><b><small>Emmanuel Ogbeide</small></b></a></p>
+      </div>
+    </footer>
+  </body>
+</html>

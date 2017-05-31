@@ -1,0 +1,39 @@
+<div ng-init = "UC.session()">
+  <div class="" ng-controller="PollsController as PC">
+    <div ng-init = "PC.index()" class="container_fluid center-block">
+      <div class="center-block text-center" id="messages">
+        <ul>
+          <i><b><li ng-repeat="message in TC.messages">{{message}}</li></b></i>
+        </ul>
+      </div>
+      <div class="row">
+        <div class="offset-md-1 col-md-3">
+          <h1>Current Polls</h1>
+        </div>
+        <div class="offset-md-8 col-md-3">
+          <input type="text" ng-model="name_filter" placeholder="Search">
+        </div>
+      </div>
+      <div class="">
+        <table class="table table-condensed table-hover table-bordered table-striped text-center">
+         <thead>
+          <tr class="active">
+            <th class="text-center">Name</th>
+            <th class="text-center">Survey Question</th>
+            <th class="text-center">Date Posted</th>
+            <th class="text-center">Action</th>
+          </tr>
+         </thead>
+         <tbody>
+           <tr ng-repeat="poll in PC.polls | filter:name_filter | orderBy:'createdAt':reverse" >
+             <td class="info" style="vertical-align:middle">{{ poll._originator.first_name }} {{ poll._originator.last_name }}</td>
+             <td class="info" style="vertical-align:middle"><a href="#!/poll/{{poll._id}}">{{ poll.question }}</a></td>
+             <td class="info" style="vertical-align:middle">{{ poll.createdAt }}</td>
+             <td class="info" style="vertical-align:middle"><button ng-if="PC.user._id === poll._originator._id"  class="btn btn-default" style="border:0px; background-color:transparent; box-shadow:0px 0px 0px 0px" ng-click="PC.destroyPoll(poll._id)">Delete</button></td>
+           </tr>
+         </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

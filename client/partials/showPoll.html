@@ -1,0 +1,51 @@
+<div ng-init = "UC.session()">
+  <div class="container_fluid" ng-controller="PollsController as PC">
+    <div class="center-block" ng-init="PC.show()">
+      <div class="center-block text-center" id="errors">
+        <ul>
+          <small><li ng-repeat="error in PC.errors">{{error}}</li></small>
+        </ul>
+      </div>
+      <div class="center-block text-center" id="messages">
+        <ul>
+          <i><b><li ng-repeat="message in PC.messages">{{message}}</li></b></i>
+        </ul>
+      </div>
+      <h1>{{PC.poll.question}}</h1>
+      <h4>Click the Vote button to choose one</h4>
+      <div class="">
+        <table class="table table-condensed table-hover table-bordered table-striped text-center">
+         <thead>
+          <tr class="active">
+            <th class="text-center">Option</th>
+            <th class="text-center">Current Vote Count</th>
+            <th class="text-center">Action</th>
+          </tr>
+         </thead>
+         <tbody>
+           <tr>
+             <td class="info" style="vertical-align:middle">{{ PC.poll.option1 }}</td>
+             <td class="info" style="vertical-align:middle">{{ PC.poll.option1vote.length }}</td>
+             <td class="info" style="vertical-align:middle"><button  class="btn btn-default" style="border:0px; background-color:transparent; box-shadow:0px 0px 0px 0px" ng-click="PC.voteoption1(PC.poll._id)">Vote</button></td>
+           </tr>
+           <tr>
+             <td class="info" style="vertical-align:middle">{{ PC.poll.option2 }}</td>
+             <td class="info" style="vertical-align:middle">{{ PC.poll.option2vote.length }}</td>
+             <td class="info" style="vertical-align:middle"><button  class="btn btn-default" style="border:0px; background-color:transparent; box-shadow:0px 0px 0px 0px" ng-click="PC.voteoption2(PC.poll._id)">Vote</button></td>
+           </tr>
+           <tr>
+             <td class="info" style="vertical-align:middle">{{ PC.poll.option3 }}</td>
+             <td class="info" style="vertical-align:middle">{{ PC.poll.option3vote.length }}</td>
+             <td class="info" style="vertical-align:middle"><button  class="btn btn-default" style="border:0px; background-color:transparent; box-shadow:0px 0px 0px 0px" ng-click="PC.voteoption3(PC.poll._id)">Vote</button></td>
+           </tr>
+           <tr>
+             <td class="info" style="vertical-align:middle">{{ PC.poll.option4 }}</td>
+             <td class="info" style="vertical-align:middle">{{ PC.poll.option4vote.length }}</td>
+             <td class="info" style="vertical-align:middle"><button  class="btn btn-default" style="border:0px; background-color:transparent; box-shadow:0px 0px 0px 0px" ng-click="PC.voteoption4(PC.poll._id)">Vote</button></td>
+           </tr>
+         </tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+</div>

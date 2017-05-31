@@ -1,0 +1,23 @@
+{
+  "name": "MEAN_Friends",
+  "description": "",
+  "main": "server.js",
+  "authors": [
+    "1aldebaran <emmanuel.ogbeide95@gmail.com>"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/1aldebaran/DojoAssignments",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.4",
+    "angular-route": "^1.6.4",
+    "angular-cookies": "^1.6.4",
+    "angular-momentjs": "^0.2.2"
+  }
+}
